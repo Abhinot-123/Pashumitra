@@ -1,0 +1,152 @@
+.navbar {
+  width: 100%;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid #e0f0e8;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.inner {
+  width: 100%;
+  padding: 0 60px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 20px;
+    height: 70px;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.logoIcon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #0f6e56, #0a5240);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.logoName {
+  font-size: 28px;
+  font-weight: 900;
+  color: #0f6e56;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.logoTagline {
+  font-size: 14px;
+  color: #5a7a6e;
+  font-weight: 500;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+}
+
+.link {
+  background: transparent;
+  border: none;
+  color: #333;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px 22px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  background: #f0faf5;
+  color: #0f6e56;
+}
+
+.active {
+  color: #0f6e56;
+  font-weight: 700;
+  background: #e6f9f0;
+}
+
+.navBtn {
+  padding: 14px 32px;
+  background: #0f6e56;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(15,110,86,0.3);
+}
+
+.navBtn:hover {
+  background: #0a5240;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15,110,86,0.4);
+}
+
+@media (max-width: 768px) {
+  .navBtn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .logoName {
+    font-size: 22px;
+  }
+  .logoTagline {
+    display: none;
+  }
+}
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.langBtn {
+  padding: 10px 16px;
+  background: #e6f9f0;
+  color: #0f6e56;
+  border: 2px solid #e0f0e8;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.langBtn:hover {
+  background: #0f6e56;
+  color: white;
+}

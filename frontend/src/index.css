@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #f0faf5;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+:root {
+  --green: #0f6e56;
+  --green-light: #e6f9f0;
+  --green-dark: #0a5240;
+  --orange: #b86e00;
+  --orange-light: #fff4e0;
+  --red: #cc0000;
+  --red-light: #fff0f0;
+  --gray: #5a7a6e;
+  --border: #e0f0e8;
+  --white: #ffffff;
+  --bg: #f0faf5;
+}

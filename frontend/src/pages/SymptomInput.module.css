@@ -1,0 +1,193 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 40px 24px;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f6e56;
+}
+
+.animalBadge {
+  background: #0f6e56;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section {
+  margin-bottom: 24px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  font-size: 14px;
+  font-family: 'Segoe UI', sans-serif;
+  outline: none;
+  transition: border 0.2s ease;
+  background: white;
+}
+
+.input:focus {
+  border-color: #0f6e56;
+}
+
+.langGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .langGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.langBtn {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.langBtn:hover {
+  border-color: #0f6e56;
+}
+
+.active {
+  background: #0f6e56;
+  color: white;
+  border-color: #0f6e56;
+}
+
+.textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  font-size: 14px;
+  font-family: 'Segoe UI', sans-serif;
+  resize: none;
+  outline: none;
+  transition: border 0.2s ease;
+  background: white;
+}
+
+.textarea:focus {
+  border-color: #0f6e56;
+}
+
+.voiceBtn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #0f6e56;
+  background: white;
+  color: #0f6e56;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.voiceBtn:hover {
+  background: #0f6e56;
+  color: white;
+}
+
+.listening {
+  background: var(--red-light);
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.fileInput {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px dashed #0f6e56;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.preview {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 12px;
+  max-height: 250px;
+  object-fit: cover;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, #0f6e56, #0a5240);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 16px rgba(15,110,86,0.3);
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15,110,86,0.4);
+}
+
+.submitBtn:disabled {
+  background: #9FE1CB;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
