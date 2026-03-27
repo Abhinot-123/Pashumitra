@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://localhost:8000'
+const BASE_URL = 'https://pashumitra-hm3a.onrender.com'
 
 export async function getDiagnosis(animal, symptoms, language, farmerName, phone, district) {
   const response = await axios.post(`${BASE_URL}/diagnose`, {
