@@ -5,13 +5,13 @@
   top: 0;
   z-index: 100;
   border-bottom: 2px solid #e0f0e8;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 .inner {
   width: 100%;
-  padding: 0 60px;
-  height: 90px;
+  padding: 0 40px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,53 +19,73 @@
 
 @media (max-width: 768px) {
   .inner {
-    padding: 0 20px;
-    height: 70px;
+    padding: 0 16px;
+    height: 60px;
   }
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .logoIcon {
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   background: linear-gradient(135deg, #0f6e56, #0a5240);
-  border-radius: 16px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .logoIcon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
 }
 
 .logoText {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
 }
 
 .logoName {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 900;
   color: #0f6e56;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
   line-height: 1;
 }
 
 .logoTagline {
-  font-size: 14px;
+  font-size: 11px;
   color: #5a7a6e;
   font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .logoName {
+    font-size: 16px;
+  }
+  .logoTagline {
+    display: none;
+  }
 }
 
 .links {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 @media (max-width: 768px) {
@@ -78,11 +98,11 @@
   background: transparent;
   border: none;
   color: #333;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
-  padding: 12px 22px;
-  border-radius: 12px;
+  padding: 8px 16px;
+  border-radius: 10px;
   transition: all 0.2s ease;
 }
 
@@ -97,56 +117,106 @@
   background: #e6f9f0;
 }
 
-.navBtn {
-  padding: 14px 32px;
-  background: #0f6e56;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(15,110,86,0.3);
-}
-
-.navBtn:hover {
-  background: #0a5240;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(15,110,86,0.4);
-}
-
-@media (max-width: 768px) {
-  .navBtn {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-  .logoName {
-    font-size: 22px;
-  }
-  .logoTagline {
-    display: none;
-  }
-}
 .navRight {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .langBtn {
-  padding: 10px 16px;
+  padding: 8px 12px;
   background: #e6f9f0;
   color: #0f6e56;
   border: 2px solid #e0f0e8;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .langBtn:hover {
   background: #0f6e56;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .langBtn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+.navBtn {
+  padding: 10px 20px;
+  background: #0f6e56;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.navBtn:hover {
+  background: #0a5240;
+}
+
+@media (max-width: 768px) {
+  .navBtn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+/* MOBILE BOTTOM NAV */
+.mobileNav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-top: 2px solid #e0f0e8;
+  padding: 10px 0;
+  z-index: 100;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 768px) {
+  .mobileNav {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.mobileNavBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 12px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.mobileNavBtn span:first-child {
+  font-size: 22px;
+}
+
+.mobileNavBtn span:last-child {
+  font-size: 10px;
+  color: #5a7a6e;
+  font-weight: 600;
+}
+
+.mobileNavActive span:last-child {
+  color: #0f6e56;
 }
