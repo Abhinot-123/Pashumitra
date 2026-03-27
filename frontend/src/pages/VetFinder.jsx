@@ -2,36 +2,36 @@ import { useState } from 'react'
 import styles from './VetFinder.module.css'
 
 const vetDatabase = [
-  { id: 1,  name: 'Dr. Rajesh Kumar',    district: 'Bhubaneswar', state: 'Odisha',      phone: '9876543210', speciality: 'Cattle & Buffalo',  available: true,  distance: '2.3 km' },
-  { id: 2,  name: 'Dr. Priya Nayak',     district: 'Bhubaneswar', state: 'Odisha',      phone: '9876543211', speciality: 'Poultry & Goat',    available: true,  distance: '4.1 km' },
-  { id: 3,  name: 'Dr. Suresh Das',      district: 'Cuttack',     state: 'Odisha',      phone: '9876543212', speciality: 'All Animals',       available: false, distance: '8.5 km' },
-  { id: 4,  name: 'Dr. Anita Mohanty',   district: 'Cuttack',     state: 'Odisha',      phone: '9876543213', speciality: 'Cattle & Sheep',    available: true,  distance: '6.2 km' },
-  { id: 5,  name: 'Dr. Bikash Panda',    district: 'Puri',        state: 'Odisha',      phone: '9876543214', speciality: 'Buffalo & Pig',     available: true,  distance: '12.0 km' },
-  { id: 6,  name: 'Dr. Sanjay Mishra',   district: 'Sambalpur',   state: 'Odisha',      phone: '9876543215', speciality: 'All Animals',       available: false, distance: '15.3 km' },
-  { id: 7,  name: 'Dr. Meena Sharma',    district: 'Patna',       state: 'Bihar',       phone: '9876543216', speciality: 'Cattle & Goat',     available: true,  distance: '3.8 km' },
-  { id: 8,  name: 'Dr. Arjun Singh',     district: 'Ranchi',      state: 'Jharkhand',   phone: '9876543217', speciality: 'Poultry & Pig',     available: true,  distance: '5.5 km' },
-  { id: 9,  name: 'Dr. Kavita Rao',      district: 'Berhampur',   state: 'Odisha',      phone: '9876543218', speciality: 'All Animals',       available: true,  distance: '1.9 km' },
-  { id: 10, name: 'Dr. Ramesh Jena',     district: 'Rourkela',    state: 'Odisha',      phone: '9876543219', speciality: 'Cattle & Buffalo',  available: false, distance: '9.7 km' },
-  { id: 11, name: 'Dr. Sunita Patel',    district: 'Jaipur',      state: 'Rajasthan',   phone: '9876543220', speciality: 'Cattle & Camel',    available: true,  distance: '3.2 km' },
-  { id: 12, name: 'Dr. Vikram Verma',    district: 'Lucknow',     state: 'Uttar Pradesh', phone: '9876543221', speciality: 'All Animals',    available: true,  distance: '7.1 km' },
-  { id: 13, name: 'Dr. Pooja Gupta',     district: 'Lucknow',     state: 'Uttar Pradesh', phone: '9876543222', speciality: 'Poultry & Goat', available: false, distance: '9.3 km' },
-  { id: 14, name: 'Dr. Amit Tiwari',     district: 'Varanasi',    state: 'Uttar Pradesh', phone: '9876543223', speciality: 'Cattle & Sheep', available: true,  distance: '4.6 km' },
-  { id: 15, name: 'Dr. Rekha Iyer',      district: 'Chennai',     state: 'Tamil Nadu',  phone: '9876543224', speciality: 'All Animals',       available: true,  distance: '2.8 km' },
-  { id: 16, name: 'Dr. Karthik Raja',    district: 'Chennai',     state: 'Tamil Nadu',  phone: '9876543225', speciality: 'Poultry & Pig',     available: false, distance: '5.4 km' },
-  { id: 17, name: 'Dr. Lakshmi Devi',    district: 'Hyderabad',   state: 'Telangana',   phone: '9876543226', speciality: 'Cattle & Buffalo',  available: true,  distance: '6.7 km' },
-  { id: 18, name: 'Dr. Ravi Shankar',    district: 'Hyderabad',   state: 'Telangana',   phone: '9876543227', speciality: 'All Animals',       available: true,  distance: '8.9 km' },
-  { id: 19, name: 'Dr. Deepa Nair',      district: 'Kochi',       state: 'Kerala',      phone: '9876543228', speciality: 'Cattle & Goat',     available: true,  distance: '3.1 km' },
-  { id: 20, name: 'Dr. Sunil Menon',     district: 'Kochi',       state: 'Kerala',      phone: '9876543229', speciality: 'Poultry & Pig',     available: false, distance: '11.2 km' },
-  { id: 21, name: 'Dr. Arun Ghosh',      district: 'Kolkata',     state: 'West Bengal', phone: '9876543230', speciality: 'All Animals',       available: true,  distance: '4.5 km' },
-  { id: 22, name: 'Dr. Mita Banerjee',   district: 'Kolkata',     state: 'West Bengal', phone: '9876543231', speciality: 'Cattle & Buffalo',  available: true,  distance: '6.3 km' },
-  { id: 23, name: 'Dr. Harish Yadav',    district: 'Pune',        state: 'Maharashtra', phone: '9876543232', speciality: 'All Animals',       available: false, distance: '7.8 km' },
-  { id: 24, name: 'Dr. Sneha Kulkarni',  district: 'Pune',        state: 'Maharashtra', phone: '9876543233', speciality: 'Cattle & Sheep',    available: true,  distance: '5.0 km' },
-  { id: 25, name: 'Dr. Mahesh Reddy',    district: 'Vijayawada',  state: 'Andhra Pradesh', phone: '9876543234', speciality: 'Cattle & Goat', available: true, distance: '3.9 km' },
-  { id: 26, name: 'Dr. Padma Reddy',     district: 'Vijayawada',  state: 'Andhra Pradesh', phone: '9876543235', speciality: 'Poultry & Pig', available: false, distance: '8.2 km' },
-  { id: 27, name: 'Dr. Gurpreet Singh',  district: 'Amritsar',    state: 'Punjab',      phone: '9876543236', speciality: 'Cattle & Buffalo',  available: true,  distance: '2.6 km' },
-  { id: 28, name: 'Dr. Manpreet Kaur',   district: 'Amritsar',    state: 'Punjab',      phone: '9876543237', speciality: 'All Animals',       available: true,  distance: '4.4 km' },
-  { id: 29, name: 'Dr. Dinesh Joshi',    district: 'Ahmedabad',   state: 'Gujarat',     phone: '9876543238', speciality: 'Cattle & Camel',    available: false, distance: '10.1 km' },
-  { id: 30, name: 'Dr. Hetal Shah',      district: 'Ahmedabad',   state: 'Gujarat',     phone: '9876543239', speciality: 'All Animals',       available: true,  distance: '6.8 km' },
+  { id: 1,  name: 'Dr. Rajesh Kumar',    district: 'Bhubaneswar', state: 'Odisha',         phone: '1800-180-1551', speciality: 'Cattle & Buffalo',  available: true,  distance: '2.3 km' },
+  { id: 2,  name: 'Dr. Priya Nayak',     district: 'Bhubaneswar', state: 'Odisha',         phone: '1800-180-1551', speciality: 'Poultry & Goat',    available: true,  distance: '4.1 km' },
+  { id: 3,  name: 'Dr. Suresh Das',      district: 'Cuttack',     state: 'Odisha',         phone: '1800-180-1551', speciality: 'All Animals',       available: false, distance: '8.5 km' },
+  { id: 4,  name: 'Dr. Anita Mohanty',   district: 'Cuttack',     state: 'Odisha',         phone: '1800-180-1551', speciality: 'Cattle & Sheep',    available: true,  distance: '6.2 km' },
+  { id: 5,  name: 'Dr. Bikash Panda',    district: 'Puri',        state: 'Odisha',         phone: '1800-180-1551', speciality: 'Buffalo & Pig',     available: true,  distance: '12.0 km' },
+  { id: 6,  name: 'Dr. Sanjay Mishra',   district: 'Sambalpur',   state: 'Odisha',         phone: '1800-180-1551', speciality: 'All Animals',       available: false, distance: '15.3 km' },
+  { id: 7,  name: 'Dr. Meena Sharma',    district: 'Patna',       state: 'Bihar',          phone: '1800-180-1551', speciality: 'Cattle & Goat',     available: true,  distance: '3.8 km' },
+  { id: 8,  name: 'Dr. Arjun Singh',     district: 'Ranchi',      state: 'Jharkhand',      phone: '1800-180-1551', speciality: 'Poultry & Pig',     available: true,  distance: '5.5 km' },
+  { id: 9,  name: 'Dr. Kavita Rao',      district: 'Berhampur',   state: 'Odisha',         phone: '1800-180-1551', speciality: 'All Animals',       available: true,  distance: '1.9 km' },
+  { id: 10, name: 'Dr. Ramesh Jena',     district: 'Rourkela',    state: 'Odisha',         phone: '1800-180-1551', speciality: 'Cattle & Buffalo',  available: false, distance: '9.7 km' },
+  { id: 11, name: 'Dr. Sunita Patel',    district: 'Jaipur',      state: 'Rajasthan',      phone: '1800-180-1551', speciality: 'Cattle & Camel',    available: true,  distance: '3.2 km' },
+  { id: 12, name: 'Dr. Vikram Verma',    district: 'Lucknow',     state: 'Uttar Pradesh',  phone: '1800-180-1551', speciality: 'All Animals',       available: true,  distance: '7.1 km' },
+  { id: 13, name: 'Dr. Pooja Gupta',     district: 'Lucknow',     state: 'Uttar Pradesh',  phone: '1800-180-1551', speciality: 'Poultry & Goat',    available: false, distance: '9.3 km' },
+  { id: 14, name: 'Dr. Amit Tiwari',     district: 'Varanasi',    state: 'Uttar Pradesh',  phone: '1800-180-1551', speciality: 'Cattle & Sheep',    available: true,  distance: '4.6 km' },
+  { id: 15, name: 'Dr. Rekha Iyer',      district: 'Chennai',     state: 'Tamil Nadu',     phone: '1800-180-1551', speciality: 'All Animals',       available: true,  distance: '2.8 km' },
+  { id: 16, name: 'Dr. Karthik Raja',    district: 'Chennai',     state: 'Tamil Nadu',     phone: '1800-180-1551', speciality: 'Poultry & Pig',     available: false, distance: '5.4 km' },
+  { id: 17, name: 'Dr. Lakshmi Devi',    district: 'Hyderabad',   state: 'Telangana',      phone: '1800-180-1551', speciality: 'Cattle & Buffalo',  available: true,  distance: '6.7 km' },
+  { id: 18, name: 'Dr. Ravi Shankar',    district: 'Hyderabad',   state: 'Telangana',      phone: '1800-180-1551', speciality: 'All Animals',       available: true,  distance: '8.9 km' },
+  { id: 19, name: 'Dr. Deepa Nair',      district: 'Kochi',       state: 'Kerala',         phone: '1800-180-1551', speciality: 'Cattle & Goat',     available: true,  distance: '3.1 km' },
+  { id: 20, name: 'Dr. Sunil Menon',     district: 'Kochi',       state: 'Kerala',         phone: '1800-180-1551', speciality: 'Poultry & Pig',     available: false, distance: '11.2 km' },
+  { id: 21, name: 'Dr. Arun Ghosh',      district: 'Kolkata',     state: 'West Bengal',    phone: '1800-180-1551', speciality: 'All Animals',       available: true,  distance: '4.5 km' },
+  { id: 22, name: 'Dr. Mita Banerjee',   district: 'Kolkata',     state: 'West Bengal',    phone: '1800-180-1551', speciality: 'Cattle & Buffalo',  available: true,  distance: '6.3 km' },
+  { id: 23, name: 'Dr. Harish Yadav',    district: 'Pune',        state: 'Maharashtra',    phone: '1800-180-1551', speciality: 'All Animals',       available: false, distance: '7.8 km' },
+  { id: 24, name: 'Dr. Sneha Kulkarni',  district: 'Pune',        state: 'Maharashtra',    phone: '1800-180-1551', speciality: 'Cattle & Sheep',    available: true,  distance: '5.0 km' },
+  { id: 25, name: 'Dr. Mahesh Reddy',    district: 'Vijayawada',  state: 'Andhra Pradesh', phone: '1800-180-1551', speciality: 'Cattle & Goat',     available: true,  distance: '3.9 km' },
+  { id: 26, name: 'Dr. Padma Reddy',     district: 'Vijayawada',  state: 'Andhra Pradesh', phone: '1800-180-1551', speciality: 'Poultry & Pig',     available: false, distance: '8.2 km' },
+  { id: 27, name: 'Dr. Gurpreet Singh',  district: 'Amritsar',    state: 'Punjab',         phone: '1800-180-1551', speciality: 'Cattle & Buffalo',  available: true,  distance: '2.6 km' },
+  { id: 28, name: 'Dr. Manpreet Kaur',   district: 'Amritsar',    state: 'Punjab',         phone: '1800-180-1551', speciality: 'All Animals',       available: true,  distance: '4.4 km' },
+  { id: 29, name: 'Dr. Dinesh Joshi',    district: 'Ahmedabad',   state: 'Gujarat',        phone: '1800-180-1551', speciality: 'Cattle & Camel',    available: false, distance: '10.1 km' },
+  { id: 30, name: 'Dr. Hetal Shah',      district: 'Ahmedabad',   state: 'Gujarat',        phone: '1800-180-1551', speciality: 'All Animals',       available: true,  distance: '6.8 km' },
 ]
 
 const districts = [...new Set(vetDatabase.map(v => v.district))]
@@ -69,6 +69,9 @@ function VetFinder() {
         <div className={styles.header}>
           <h2 className={styles.title}>Find Nearest Vet</h2>
           <p className={styles.sub}>Government veterinary officers near you — available 24/7</p>
+          <div className={styles.helpline}>
+            🆘 National Animal Disease Helpline: <strong>1800-180-1551</strong> (Toll Free)
+          </div>
         </div>
 
         <div className={styles.filterBar}>
@@ -118,8 +121,8 @@ function VetFinder() {
                 </div>
               </div>
               <div className={styles.cardBottom}>
-                <a href={`tel:${vet.phone}`} className={styles.callBtn}>
-                  📞 Call {vet.phone}
+                <a href={`tel:1800-180-1551`} className={styles.callBtn}>
+                  📞 Call Helpline
                 </a>
                 <button className={styles.msgBtn} onClick={() => { setSelectedVet(vet); setSent(false); setMessage('') }}>
                   💬 Send Message
@@ -130,7 +133,6 @@ function VetFinder() {
         </div>
       </div>
 
-      {/* MESSAGE MODAL */}
       {selectedVet && (
         <div className={styles.overlay} onClick={() => setSelectedVet(null)}>
           <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
@@ -149,7 +151,6 @@ function VetFinder() {
                   </div>
                   <button className={styles.closeBtn} onClick={() => setSelectedVet(null)}>✕</button>
                 </div>
-
                 <div className={styles.modalBody}>
                   <label className={styles.modalLabel}>Your Message</label>
                   <textarea
@@ -160,7 +161,6 @@ function VetFinder() {
                     rows={5}
                   />
                 </div>
-
                 <div className={styles.modalFooter}>
                   <button className={styles.cancelBtn} onClick={() => setSelectedVet(null)}>Cancel</button>
                   <button className={styles.sendBtn} onClick={handleSendMessage}>Send Message →</button>

@@ -398,3 +398,13 @@
   font-size: 15px;
   color: var(--gray);
 }
+.helpline {
+  background: #fff4e0;
+  border: 2px solid #ffcc80;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #b86e00;
+  margin-top: 12px;
+  display: inline-block;
+}

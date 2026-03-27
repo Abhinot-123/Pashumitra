@@ -28,8 +28,8 @@ function Navbar() {
           </div>
 
           <div className={styles.navRight}>
-            <button className={styles.langBtn} onClick={() => { localStorage.removeItem('appLanguage'); window.location.href = '/language' }}>
-              {lang === 'English' ? '🇬🇧' : '🇮🇳'} {lang}
+            <button className={styles.langBtn} onClick={() => { localStorage.removeItem('appLanguage'); window.location.href = '/' }}>
+              🌐 {lang}
             </button>
             <button className={styles.navBtn} onClick={() => navigate('/symptoms')}>
               {tr.getDiagnosis}
