@@ -106,9 +106,9 @@ Powered by Google Gemini
           <button className={styles.downloadBtn} onClick={downloadPDF}>
             📄 Download Report
           </button>
-          <button className={styles.alertBtn}>
-            🚨 Alert Nearest Vet
-          </button>
+          <button className={styles.alertBtn} onClick={() => navigate('/vets')}>
+  🚨 Alert Nearest Vet
+</button>
         </div>
 
         <button className={styles.homeBtn} onClick={() => navigate('/')}>
